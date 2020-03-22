@@ -1,0 +1,230 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ChanjoTrack’s Technical Specifications. &mdash; ChanjoTrack 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> ChanjoTrack
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">ChanjoTrack’s Technical Specifications.</a><ul>
+<li><a class="reference internal" href="#technology-stack">Technology Stack</a></li>
+<li><a class="reference internal" href="#code-repositories">Code Repositories</a></li>
+<li><a class="reference internal" href="#sample-api-access">Sample API Access</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">ChanjoTrack</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>ChanjoTrack’s Technical Specifications.</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chanjotrack-s-technical-specifications">
+<h1>ChanjoTrack’s Technical Specifications.<a class="headerlink" href="#chanjotrack-s-technical-specifications" title="Permalink to this headline">¶</a></h1>
+<p>ChanjoTrack is made up of two systems that are integrated;</p>
+<ol class="arabic simple">
+<li><p>A USSD end for data capture.</p></li>
+<li><p>A web based system for reports visualization and also acts as the USSD server</p></li>
+</ol>
+<p>The system is currently hosted on a Linode cloud instance with the following specs:</p>
+<ul class="simple">
+<li><p>Ubuntu 16.04 64 bit</p></li>
+<li><p>4GB RAM</p></li>
+<li><p>80 GB HDD</p></li>
+<li><p>2 CPUs</p></li>
+</ul>
+<div class="section" id="technology-stack">
+<h2>Technology Stack<a class="headerlink" href="#technology-stack" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Python 3.6 with Django 1.11.9</p></li>
+<li><p>React Material UI template for UI</p></li>
+<li><p>PostgreSQL 10 for Database</p></li>
+<li><p>GraphQL for API Development</p></li>
+</ol>
+<p>The backend and the frontend are completely decoupled, in the sense that you can port a completely different front-end to the backend. The backend is purely Django and GraphQL whereas the current frontend is built on ReactJS. All connections between the frontend and the backend are via API calls.</p>
+</div>
+<div class="section" id="code-repositories">
+<h2>Code Repositories<a class="headerlink" href="#code-repositories" title="Permalink to this headline">¶</a></h2>
+<p>The codebase is hosted on Bitbucket on the following repository:
+<a class="reference external" href="https://bitbucket.org/fegati/vregistry">https://bitbucket.org/fegati/vregistry</a></p>
+</div>
+<div class="section" id="sample-api-access">
+<h2>Sample API Access<a class="headerlink" href="#sample-api-access" title="Permalink to this headline">¶</a></h2>
+<p>Since the system is API driven and integration ready, our wise guess is that future developers will be more interested in knowing how to access the GraphQL API;
+The API endpoint is <a class="reference external" href="https://api.chanjotrack.org/evr/dev">https://api.chanjotrack.org/evr/dev</a>. An example payload for fetching child vaccines will look like this;</p>
+<img alt="_images/graphql_api.png" src="_images/graphql_api.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, FESK
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
